@@ -1,0 +1,110 @@
+{
+  "name": "IORN",
+  "scopeName": "source.iorn",
+  "fileTypes": ["iorn"],
+  "patterns": [
+    {
+      "name": "comment.line.double-hash.iorn",
+      "match": "##.*$"
+    },
+    {
+      "name": "comment.line.at-rem.iorn", 
+      "match": "@rem.*$"
+    },
+    {
+      "name": "comment.block.remline.iorn",
+      "begin": "@remLine\\(",
+      "end": "\\)",
+      "contentName": "comment.block.content.iorn"
+    },
+    {
+      "name": "comment.block.triple-quote.iorn",
+      "begin": "\"\"\"",
+      "end": "\"\"\"",
+      "contentName": "comment.block.content.iorn"
+    },
+    {
+      "name": "string.quoted.double.f-string.iorn",
+      "begin": "f\"",
+      "end": "\"",
+      "beginCaptures": {
+        "0": { "name": "string.quoted.double.f-string.prefix.iorn" }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.interpolation.iorn",
+          "match": "\\$\\[\\w+\\]"
+        }
+      ]
+    },
+    {
+      "name": "string.quoted.double.iorn",
+      "begin": "\"",
+      "end": "\""
+    },
+    {
+      "name": "keyword.control.conditional.iorn",
+      "match": "\\b(if|then|else|to|resume|perform|endif)\\b"
+    },
+    {
+      "name": "keyword.other.variable.iorn",
+      "match": "\\b(new|variable|rename)\\b"
+    },
+    {
+      "name": "keyword.control.import.iorn",
+      "match": "\\b(import)\\b"
+    },
+    {
+      "name": "keyword.control.ignore.iorn",
+      "match": "\\b(ignore)\\b"
+    },
+    {
+      "name": "storage.type.iorn",
+      "match": "\\b(string|numeric|floating|boolean|NULL)\\b"
+    },
+    {
+      "name": "constant.language.boolean.iorn",
+      "match": "\\b(TRUE|FALSE|true|false)\\b"
+    },
+    {
+      "name": "entity.name.function.iorn",
+      "match": "\\b(Print|input)(?=\\()"
+    },
+    {
+      "name": "constant.numeric.decimal.iorn",
+      "match": "\\b\\d+\\.\\d+\\b"
+    },
+    {
+      "name": "constant.numeric.integer.iorn",
+      "match": "\\b\\d+\\b"
+    },
+    {
+      "name": "keyword.operator.comparison.iorn",
+      "match": "(==|!=|>=|<=|>|<)"
+    },
+    {
+      "name": "keyword.operator.arithmetic.iorn",
+      "match": "(\\*\\*|\\+|-|\\*|/|%|\\^)"
+    },
+    {
+      "name": "keyword.operator.assignment.iorn",
+      "match": "="
+    },
+    {
+      "name": "punctuation.terminator.statement.iorn",
+      "match": ";"
+    },
+    {
+      "name": "punctuation.separator.colon.iorn",
+      "match": ":"
+    },
+    {
+      "name": "punctuation.section.parens.iorn",
+      "match": "[()]"
+    },
+    {
+      "name": "punctuation.section.brackets.iorn",
+      "match": "[\\[\\]]"
+    }
+  ]
+}

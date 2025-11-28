@@ -1,0 +1,108 @@
+{
+  "name": "iorn-language-support",
+  "displayName": "IORN Programming Language",
+  "description": "Complete language support for IORN programming language with syntax highlighting, icons, and compiler integration",
+  "version": "1.0.4",
+  "publisher": "iorn",
+  "license": "MIT",
+  "homepage": "https://github.com/Beginnercodinggamer228/iorn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Beginnercodinggamer228/iorn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Beginnercodinggamer228/iorn/issues"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "iorn",
+    "programming",
+    "language",
+    "syntax",
+    "highlighting"
+  ],
+  "icon": "iorn_ico_logo.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:iorn"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "iorn",
+        "aliases": ["IORN", "iorn"],
+        "extensions": [".iorn"],
+        "mimetypes": ["text/x-iorn"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/iorn-light.png",
+          "dark": "./icons/iorn-dark.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "iorn",
+        "scopeName": "source.iorn",
+        "path": "./syntaxes/iorn.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "iorn.compile",
+        "title": "Compile IORN File",
+        "category": "IORN",
+        "icon": "$(play)"
+      },
+      {
+        "command": "iorn.run",
+        "title": "Run IORN File",
+        "category": "IORN",
+        "icon": "$(run)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceExtname == .iorn",
+          "command": "iorn.compile",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceExtname == .iorn",
+          "command": "iorn.run",
+          "group": "navigation"
+        }
+      ],
+      "editor/title": [
+        {
+          "when": "resourceExtname == .iorn",
+          "command": "iorn.run",
+          "group": "navigation"
+        }
+      ]
+    },
+    "snippets": [
+      {
+        "language": "iorn",
+        "path": "./snippets/iorn.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'Ready for publish'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0"
+  }
+}

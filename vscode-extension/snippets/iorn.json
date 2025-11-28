@@ -1,0 +1,57 @@
+{
+  "Variable Declaration": {
+    "prefix": "var",
+    "body": [
+      "new variable ${1:name} ${2|string,numeric,floating,boolean|} = ${3:value};"
+    ],
+    "description": "Create a new variable"
+  },
+  "Print Statement": {
+    "prefix": "print",
+    "body": [
+      "Print(\"${1:text}\");"
+    ],
+    "description": "Print text to console"
+  },
+  "Print with Variable": {
+    "prefix": "printf",
+    "body": [
+      "Print(f\"${1:text} $[${2:variable}]\");"
+    ],
+    "description": "Print text with variable interpolation"
+  },
+  "Input Statement": {
+    "prefix": "input",
+    "body": [
+      "new variable ${1:name} string = input(\"${2:prompt}\");"
+    ],
+    "description": "Get user input"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) then:",
+      "    ${2:## code}",
+      "endif;"
+    ],
+    "description": "If conditional statement"
+  },
+  "If-Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition}) then:",
+      "    ${2:## code}",
+      "else perform:",
+      "    ${3:## code}",
+      "endif;"
+    ],
+    "description": "If-else conditional statement"
+  },
+  "Import Terminal": {
+    "prefix": "import",
+    "body": [
+      "import terminal.*;"
+    ],
+    "description": "Import terminal module"
+  }
+}
