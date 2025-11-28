@@ -1,4 +1,4 @@
-![logo](/icons/iorn-dark.png)
+![logo](/assets/iorn_ico_logo.png)
 # IORN Programming Language
 
 IORN is a modern programming language with intuitive syntax and Russian localization support.
